@@ -9,7 +9,15 @@ from models import Supplier
 from sqlalchemy import func
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Warehouse Inventory API",
+    servers=[
+        {
+            "url": "https://warehouse-inventory-assistant.onrender.com",
+            "description": "Production server"
+        }
+    ]
+)
 
 
 @app.get("/")
